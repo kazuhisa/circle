@@ -4,6 +4,13 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 
+Dir.glob("spec/**/*steps.rb") { |f| load f, true }
+
+require 'capybara/dsl'
+require 'capybara/rspec'
+require 'turnip'
+require 'turnip/capybara'
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
